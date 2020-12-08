@@ -14,7 +14,6 @@ export const Header = props => {
 };
 
 const mapStateToProps = state => {
-  console.log(state, "header state");
   return {
     additionalPrice: state.headerReducer.additionalPrice,
     car: {
