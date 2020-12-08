@@ -5,19 +5,8 @@ import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 
-import { connect } from "react-redux";
-import { stat } from "fs";
-
-export const App = () => {
+const App = () => {
   const state = {
-    additionalPrice: 0,
-    car: {
-      price: 26395,
-      name: "2019 Ford Mustang",
-      image:
-        "https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg",
-      features: []
-    },
     additionalFeatures: [
       { id: 1, name: "V-6 engine", price: 1500 },
       { id: 2, name: "Racing detail package", price: 1500 },
@@ -29,34 +18,15 @@ export const App = () => {
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={state.car} />
-        <AddedFeatures car={state.car} />
+        <Header />
+        <AddedFeatures />
       </div>
       <div className="box">
         <AdditionalFeatures additionalFeatures={state.additionalFeatures} />
-        <Total car={state.car} additionalPrice={state.additionalPrice} />
+        <Total />
       </div>
     </div>
   );
 };
 
-const mapStateToProps = state => {
-  console.log(state, "STATE HERE");
-  return {
-    additionalPrice: state.additionalPrice,
-    car: {
-      ...state.car,
-      features: state.car.features,
-      image: state.car.image,
-      price: state.car.price
-    }
-  };
-};
-// car:{...state.car, {
-//   features: state.car.features,
-//   image: state.car.image,
-//   price: state.car.price
-// }}
-// };
-
-export default connect(mapStateToProps)(Header);
+export default App;
