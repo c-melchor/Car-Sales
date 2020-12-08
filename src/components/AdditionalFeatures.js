@@ -1,7 +1,9 @@
-import React from 'react';
-import AdditionalFeature from './AdditionalFeature';
+import React from "react";
+import AdditionalFeature from "./AdditionalFeature";
+import { connect } from "react-redux";
 
-const AdditionalFeatures = props => {
+export const AdditionalFeatures = props => {
+  console.log(props);
   return (
     <div className="content">
       <h4>Additional Features</h4>
@@ -18,4 +20,18 @@ const AdditionalFeatures = props => {
   );
 };
 
-export default AdditionalFeatures;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    additionalFeatures: [
+      ...state.AdditionalFeatures,
+      {
+        id: state.AdditionalFeatures.id,
+        name: state.additionalFeatures.name,
+        price: state.additionalFeatures.price
+      }
+    ]
+  };
+};
+
+export default connect(mapStateToProps)(AdditionalFeatures);

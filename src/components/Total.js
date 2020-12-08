@@ -10,9 +10,13 @@ export const Total = props => {
 };
 
 const mapStateToProps = state => {
+  console.log(state, "TOTAL STATE HERE");
   return {
     ...state,
-    car: { ...state.car, price: state.car.price + state.additionalPrice }
+    car: {
+      ...state.headerReducer.car,
+      price: state.headerReducer.car.price + state.headerReducer.additionalPrice
+    }
   };
 };
 
