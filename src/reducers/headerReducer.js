@@ -10,5 +10,14 @@ export const initialState = {
 };
 
 export const headerReducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case "ADD_FEATURE":
+      console.log(state, action, "REDUCER STATE");
+      return {
+        ...state,
+        additionalPrice: state.additionalPrice + action.payload
+      };
+    default:
+      return state;
+  }
 };
