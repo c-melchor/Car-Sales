@@ -9,7 +9,6 @@ const AdditionalFeature = props => {
   const onClick = e => {
     props.addFeature(Number(e.target.value));
   };
-
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
