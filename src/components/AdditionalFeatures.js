@@ -3,9 +3,11 @@ import AdditionalFeature from "./AdditionalFeature";
 import { connect } from "react-redux";
 
 export const AdditionalFeatures = props => {
-  console.log(props, "  props ******");
+  console.log(props);
   return (
     <div className="content">
+      <p>HELLO FROM HERE</p>
+      <AdditionalFeature />
       {/* <h4>Additional Features</h4>
       {props.additionalFeatures.length ? (
         <ol type="1">
@@ -21,16 +23,9 @@ export const AdditionalFeatures = props => {
 };
 
 const mapStateToProps = state => {
-  console.log(state, "ADDDITIONLLL FREATS");
+  console.log("state from additional features", state);
   return {
-    additionalFeatures: [
-      ...state.AdditionalFeatures,
-      {
-        id: state.AdditionalFeatures.id,
-        name: state.additionalFeatures.name,
-        price: state.additionalFeatures.price
-      }
-    ]
+    additionalFeatures: state.AdditionalFeatures
   };
 };
 
