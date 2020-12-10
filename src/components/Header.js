@@ -14,15 +14,13 @@ export const Header = props => {
 };
 
 const mapStateToProps = state => {
-  // console.log(state, "HEADER STATE HERE");
   return {
-    additionalPrice: state.headerReducer.additionalPrice,
+    additionalPrice: state.additionalPrice,
     car: {
-      ...state.headerReducer.car,
-
-      features: state.headerReducer.car.features,
-      image: state.headerReducer.car.image,
-      price: state.headerReducer.car.price
+      ...state.car,
+      features: state.car.features,
+      image: state.car.image,
+      price: state.car.price
     }
   };
 };

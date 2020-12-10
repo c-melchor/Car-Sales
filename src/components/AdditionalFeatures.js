@@ -21,8 +21,8 @@ const AdditionalFeatures = props => {
 
 const mapStateToProps = state => {
   return {
-    additionalFeatures: state.featuresReducer.additionalFeatures
+    additionalFeatures: state.additionalFeatures
   };
 };
 
-export default connect(mapStateToProps)(AdditionalFeatures);
+export default connect(mapStateToProps, {})(AdditionalFeatures);
